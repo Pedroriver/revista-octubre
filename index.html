@@ -296,67 +296,48 @@
 <body>
   <div class="pagina">
 
-    <!-- ============ PORTADA ============ -->
     <div class="cabecera-fecha">
       <span>Edición familiar</span>
-      <!-- CAMBIA LA FECHA O EL NÚMERO DE LA EDICIÓN -->
       <span>Octubre 2026</span>
     </div>
 
     <header>
-      <!-- CAMBIA EL NOMBRE DE TU REVISTA -->
       <h1>Familia Rivera Rodriguez</h1>
-      <!-- LEMA O SUBTÍTULO (puedes borrarlo) -->
       <p>momentos de octubre</p>
     </header>
 
     <main>
-
-      <!-- ====================================================
-           SECCIÓN 1
-           Para agregar otra sección, copia desde <section> hasta </section>
-           y pégala debajo de la última.
-           ==================================================== -->
       <section class="seccion">
         <div class="seccion-cabecera">
-          <p class="etiqueta">Sociales</p>                         <!-- palabra pequeña arriba (opcional) -->
-          <h2>Escribe aquí el encabezado de la primera sección</h2> <!-- ENCABEZADO -->
-          <p class="bajada">Una línea breve que cuente de qué trata esta sección.</p> <!-- opcional -->
+          <p class="etiqueta">Sociales</p>
+          <h2>Escribe aquí el encabezado de la primera sección</h2>
+          <p class="bajada">Una línea breve que cuente de qué trata esta sección.</p>
         </div>
 
         <div class="galeria">
-          <!--
-            CADA FOTO ES UN BLOQUE <figure>.
-            - src: ruta de la foto (guárdalas en la carpeta "fotos")
-            - alt: descripción breve de la foto
-            - figcaption: pie de foto (por ejemplo, nombres de izquierda a derecha)
-            La primera foto lleva class="grande" para que salga más grande; quítaselo si no lo quieres.
-            Para agregar otra foto, copia un bloque <figure> completo.
-          -->
           <figure class="grande">
-            <img src="fotos/abuela1.jpg" alt="reunion 1">
+            <img src="abuela1.jpg" alt="reunion 1">
             <figcaption>Pie de foto: nombres de izquierda a derecha.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-02.jpg" alt="Descripción de la foto 2">
+            <img src="octubre3.jpg" alt="Descripción de la foto 2">
             <figcaption>Pie de foto 2.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-03.jpg" alt="Descripción de la foto 3">
+            <img src="octubre4.jpg" alt="Descripción de la foto 3">
             <figcaption>Pie de foto 3.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-04.jpg" alt="Descripción de la foto 4">
+            <img src="octubre5.jpg" alt="Descripción de la foto 4">
             <figcaption>Pie de foto 4.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-05.jpg" alt="Descripción de la foto 5">
+            <img src="octubre6.jpg" alt="Descripción de la foto 5">
             <figcaption>Pie de foto 5.</figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- ============ SECCIÓN 2 ============ -->
       <section class="seccion">
         <div class="seccion-cabecera">
           <p class="etiqueta">Celebraciones</p>
@@ -366,25 +347,24 @@
 
         <div class="galeria">
           <figure class="grande">
-            <img src="fotos/foto-06.jpg" alt="Descripción de la foto 6">
+            <img src="octubre7.jpg" alt="Descripción de la foto 6">
             <figcaption>Pie de foto 6.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-07.jpg" alt="Descripción de la foto 7">
+            <img src="octubre9.jpg" alt="Descripción de la foto 7">
             <figcaption>Pie de foto 7.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-08.jpg" alt="Descripción de la foto 8">
+            <img src="octubre10.jpg" alt="Descripción de la foto 8">
             <figcaption>Pie de foto 8.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-09.jpg" alt="Descripción de la foto 9">
+            <img src="octubre11.jpg" alt="Descripción de la foto 9">
             <figcaption>Pie de foto 9.</figcaption>
           </figure>
         </div>
       </section>
 
-      <!-- ============ SECCIÓN 3 ============ -->
       <section class="seccion">
         <div class="seccion-cabecera">
           <p class="etiqueta">Paseos</p>
@@ -394,15 +374,15 @@
 
         <div class="galeria">
           <figure>
-            <img src="fotos/foto-10.jpg" alt="Descripción de la foto 10">
+            <img src="octubre12.jpg" alt="Descripción de la foto 10">
             <figcaption>Pie de foto 10.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-11.jpg" alt="Descripción de la foto 11">
+            <img src="octubre13.jpg" alt="Descripción de la foto 11">
             <figcaption>Pie de foto 11.</figcaption>
           </figure>
           <figure>
-            <img src="fotos/foto-12.jpg" alt="Descripción de la foto 12">
+            <img src="octubre1.jpg" alt="Descripción de la foto 12">
             <figcaption>Pie de foto 12.</figcaption>
           </figure>
         </div>
@@ -416,7 +396,6 @@
 
   </div>
 
-  <!-- ============ VISOR: NO NECESITAS TOCAR NADA DE AQUÍ PARA ABAJO ============ -->
   <dialog id="visor" aria-label="Visor de fotos">
     <div class="visor-marco" id="visor-marco">
       <button type="button" class="visor-cerrar" id="visor-cerrar" aria-label="Cerrar">&times;</button>
@@ -440,10 +419,9 @@
       var btnSig = document.getElementById('visor-sig');
 
       var fotos = Array.prototype.slice.call(document.querySelectorAll('.galeria img'));
-      var lista = [];   // solo las fotos que sí existen
+      var lista = [];
       var actual = 0;
 
-      // Si falta una foto, se muestra un recuadro avisando cuál archivo poner
       function marcarSinFoto(img) {
         var fig = img.closest('figure');
         var archivo = (img.getAttribute('src') || '').split('/').pop();
@@ -455,7 +433,6 @@
         img.addEventListener('error', function () { marcarSinFoto(img); });
         if (img.complete && img.naturalWidth === 0) { marcarSinFoto(img); }
 
-        // Hacer cada foto "clicable" también con teclado
         img.tabIndex = 0;
         img.setAttribute('role', 'button');
         img.setAttribute('aria-label', 'Ampliar foto: ' + (img.alt || ''));
@@ -510,19 +487,16 @@
       btnAnt.addEventListener('click', function () { mostrar(actual - 1); });
       btnSig.addEventListener('click', function () { mostrar(actual + 1); });
 
-      // Clic en el fondo oscuro cierra el visor
       marco.addEventListener('click', function (e) {
         if (e.target === marco) { cerrar(); }
       });
 
-      // Flechas del teclado
       document.addEventListener('keydown', function (e) {
         if (!visor.open || lista.length < 2) { return; }
         if (e.key === 'ArrowLeft') { mostrar(actual - 1); }
         if (e.key === 'ArrowRight') { mostrar(actual + 1); }
       });
 
-      // Deslizar el dedo en el celular
       var inicioX = null;
       visor.addEventListener('touchstart', function (e) {
         inicioX = e.changedTouches[0].clientX;
